@@ -84,6 +84,7 @@ func (p *parser) capture_word() error {
 	default:
 		return p.capture_simple_word()
 	}
+	panic("")
 }
 
 func (p *parser) capture_sq_word() error {
