@@ -2,8 +2,24 @@ package shellwords
 
 import (
 	"encoding/json"
+	"fmt"
 	"testing"
 )
+
+func ExampleSplit() {
+	words, err := Split(`a-word 'cool' foo'bar'`)
+	if err != nil {
+		panic(err)
+	}
+	for _, word := range words {
+		fmt.Println(word)
+	}
+
+	// Output:
+	// a-word
+	// cool
+	// foobar
+}
 
 func TestSimpleWord(t *testing.T) {
 	var (
